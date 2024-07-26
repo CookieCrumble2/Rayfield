@@ -16,7 +16,11 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
-
+if game:GetService("CoreGui"):WaitForChild("ArrayField"):WaitForChild("Main") then
+	local uiScale = Instance.new("UIScale")
+	uiScale.Scale = 0.8 -- 1 is defuld lower it if u want smaller ui
+	uiScale.Parent = game:GetService("CoreGui"):WaitForChild("ArrayField"):WaitForChild("Main")
+end
 
 local RayfieldLibrary = {
 	Flags = {},

@@ -1213,7 +1213,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	local Passthrough = false
 	Topbar.Title.Text = Settings.Name
 
-	Main.Main.Size = UDim2.new(0.7, 0, 0.4, 0) -- Example: scales based on screen size
+	Main.Size = UDim2.new(0, 325, 0, 250)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
 	if Main:FindFirstChild('Notice') then Main.Notice.Visible = false end

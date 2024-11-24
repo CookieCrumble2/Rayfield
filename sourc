@@ -1305,60 +1305,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			end	
 		end
 	end)
-local frameID = "rbxassetid://131589985697545" -- The asset ID from the provided link
 
--- Create the ImageLabel
-local ImageLabel = Instance.new("ImageLabel")
-ImageLabel.Parent = LoadingFrame
-ImageLabel.Name = "ImageLabel"
-ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel.Size = UDim2.new(0, 150, 0, 150)
-ImageLabel.BackgroundTransparency = 1
-ImageLabel.ImageTransparency = 1
-ImageLabel.Visible = true
-ImageLabel.Image = frameID -- Set the image using the provided asset ID
-
--- Add UICorner for rounded edges
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 5)
-UICorner.Parent = ImageLabel
-
--- Adjust the Title
-LoadingFrame.Title.AnchorPoint = Vector2.new(0.5, 0)
-LoadingFrame.Title.Position = UDim2.new(ImageLabel.Position.X.Scale, ImageLabel.Position.X.Offset, 0.1, 0)
-LoadingFrame.Title.TextXAlignment = Enum.TextXAlignment.Center
-
--- Create a Cloned Title
-local ClonedTitle = LoadingFrame.Title:Clone()
-ClonedTitle.Parent = LoadingFrame
-ClonedTitle.AnchorPoint = Vector2.new(0.5, 1)
-ClonedTitle.Position = UDim2.new(ImageLabel.Position.X.Scale, ImageLabel.Position.X.Offset, 0.9, 0)
-ClonedTitle.TextTransparency = 1
-ClonedTitle.Text = randomText
-ClonedTitle.Name = "ClonedTitle"
-ClonedTitle.TextColor3 = randomColor
-ClonedTitle.TextXAlignment = Enum.TextXAlignment.Center
-
--- Function to simulate a "blinking" effect
-local function playEffect()
-    while true do
-        -- Fade in
-        for i = 1, 0, -0.1 do
-            ImageLabel.ImageTransparency = i
-            task.wait(0.05)
-        end
-
-        -- Fade out
-        for i = 0, 1, 0.1 do
-            ImageLabel.ImageTransparency = i
-            task.wait(0.05)
-        end
-    end
-end
-
--- Start the blinking effect
-spawn(playEffect)
 	
 	makeDraggable(Main, Topbar, false, {255, 150})
 	if dragBar then dragBar.Position = useMobileSizing and UDim2.new(0.5, 0, 0.5, 150) or UDim2.new(0.5, 0, 0.5, 255) makeDraggable(Main, dragInteract, true, {255, 150}) end

@@ -16,8 +16,19 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local unknownHub = 'Version - 1A'
+local unknownUpm = 'Updated - December 10, 2024'
 warn('UnknownHub | Running Build:', unknownHub)
+warn('UnknownHub | Updated:', unknownUpm)
+warn('WebhookLogs | ✅')
+local startTime = os.clock()
 
+-- Simulate game loading process
+for i = 1, 1000000 do end
+
+local endTime = os.clock()
+local loadTime = endTime - startTime
+
+print("Game loaded in " .. loadTime .. " seconds.")
 
 local RayfieldLibrary = {
 	Flags = {},

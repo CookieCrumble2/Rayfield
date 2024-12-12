@@ -16,7 +16,7 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local unknownHub = 'Version - 1A'
-warn('UnknownHub | Running Build:', ..unknownHub)
+warn('UnknownHub | Running Build:', unknownHub)
 
 
 local RayfieldLibrary = {
